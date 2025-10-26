@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Tickify - Ticket Management App ([React|Vue] Version)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A robust ticket management web app built for HNG-13 Stage 2. Features landing page, auth (login/signup with validation/toasts), dashboard (stats/logout), and CRUD tickets (real-time val, localStorage persistence). Identical UI across frameworks (wave hero, circles, 1440px max, responsive).
 
-## Available Scripts
+## Frameworks & Libraries Used
+- **[React|Vue.js 3]**: Core framework.
+- **[react-router-dom|vue-router]**: SPA routing with protected guards.
+- **[react-hot-toast|vue-toastification]**: Inline/toast notifications.
+- **[lucide-react|lucide-vue-next]**: Icons (Menu, X, Eye, etc.).
+- **Vanilla CSS**: Responsive (Flex/Grid, media queries), semantic HTML, accessibility (ARIA, focus).
+- **localStorage**: Simulated auth/tickets (no backend).
 
-In the project directory, you can run:
+## Setup & Run Locally
+1. Clone repo: `git clone [REPO_URL] && cd tickify-[react|vue]`.
+2. Install deps: `npm install`.
+3. Run dev server: `npm start` ([React: localhost:3000|Vue: localhost:5173]).
+4. Build for prod: `npm run build` ([React: serve build|Vue: serve dist]).
 
-### `npm start`
+## Switching Versions
+- **React**: [GitHub Repo](https://github.com/[user]/tickify-react) | [Netlify Live]([URL]).
+- **Vue**: [GitHub Repo](https://github.com/[user]/tickify-vue) | [Netlify Live]([URL]).
+- **Twig**: Coming soon—static templates with PHP sim.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## UI Components & State Structure
+- **Landing**: Static hero (wave SVG, circles, CTAs), features cards, footer.
+- **Auth (Login/Signup)**: Forms with v-model/reactive, real-time val (computed errors), password toggle, toasts on submit.
+- **Dashboard**: Stats cards (computed from tickets ref), sidebar nav (props/emits), logout clears localStorage.
+- **Tickets**: Form (reactive form, val on input/blur), list (v-for cards with status classes), CRUD (save/load localStorage, confirm delete).
+- **State**: Reactive refs/reactive for form/errors/tickets, computed for stats/hasErrors, onMounted for guards/load.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Accessibility & Notes
+- Semantic HTML (`<main>`, `<section>`, `<label for>`, ARIA-describedby for errors).
+- Focus visible (`:focus { outline: 2px solid #60A5FA; }`), keyboard nav (buttons/links).
+- Responsive: Mobile stack/column, desktop row/grid (900px+ breakpoint).
+- Notes: localStorage sim (no real API); test in incognito for fresh session. No known issues—Lighthouse accessibility 95%+.
 
-### `npm test`
+## Test User Credentials
+- Signup any email (e.g., test@example.com), password >=6 chars.
+- Login with created creds.
+- Create tickets: Title required, status dropdown, desc optional (>=10 chars if filled).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was built as part of the HNG 13 Frontend Track Stage 2
+Created by Muhammed Kabiru Nasiru — Frontend Developer passionate about design, interactivity, and AI-driven web experiences.

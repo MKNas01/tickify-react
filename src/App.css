@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+/* Mirror React globals: vars, resets, buttons, cards, etc. */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; }
+body { 
+  font-family: 'Inter', 'Poppins', 'Segoe UI', Roboto, sans-serif; 
+  line-height: 1.6; 
+  color: #0F172A;
+  background: #F9FAFB;
+  height: 100%;
+  overflow: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --primary-blue: #3B82F6;
+  --light-blue: #60A5FA;
+  --dark-blue: #1E40AF;
+  --bg-light: #F9FAFB;
+  --bg-hero: #0F172A;
+  --text-primary: #0F172A;
+  --text-on-dark: #F8FAFC;
+  --text-muted: #64748B;
+  --white: #FFFFFF;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --border-radius: 12px;
+  --max-width: 1440px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+.btn-primary:hover { background-color: var(--light-blue); }
+
+.btn:focus, a:focus { outline: 2px solid var(--light-blue); outline-offset: 2px; }
+
+.card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.decorative-circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--light-blue) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+body, .landing-root {
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  margin: 0; /* Override any inherited */
+  padding-top: 0; /* Remove top space */
+}
+
+/* React Hot Toast Parity: White bg, colored icons/borders */
+.react-hot-toast {
+  background: #ffffff !important;  /* White bg */
+  border: 1px solid #e5e7eb !important;  /* Light border */
+  color: #0f172a !important;  /* Dark text */
+  border-radius: 8px !important;
+}
+
+.react-hot-toast .react-hot-toast-icon {
+  color: #3b82f6 !important;  /* Blue icon default */
+}
+
+.react-hot-toast--success .react-hot-toast-icon {
+  color: #16a34a !important;  /* Green accent for success */
+}
+
+.react-hot-toast--error .react-hot-toast-icon {
+  color: #ef4444 !important;  /* Red accent for error */
+}
+
+.react-hot-toast--success {
+  border-left: 4px solid #16a34a !important;  /* Green left border */
+}
+
+.react-hot-toast--error {
+  border-left: 4px solid #ef4444 !important;  /* Red left border */
 }
