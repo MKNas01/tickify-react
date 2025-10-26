@@ -9,7 +9,7 @@ import "./Landing.css";
 export default function Landing() {
   return (
     <main className="landing-root" aria-labelledby="landing-title">
-      <section className="hero" role="region" aria-label="Hero">
+      <section className="hero" aria-label="Hero">
         <div className="container">
           <div className="hero-content">
             <header>

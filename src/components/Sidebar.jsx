@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Home, Ticket, User, LogOut, X } from "lucide-react";
+import { Home, Ticket, LogOut, X } from "lucide-react";
 import "./Sidebar.css";
 
 function Sidebar({ onLogout, isOpen, setIsOpen }) {
